@@ -22,6 +22,13 @@ body {
 #remain_time {
     color: #422b09;
 }
+#now_date:hover,
+#now_time:hover,
+#remain_time:hover,
+.data:hover{
+    font-size: 3.2vw;
+    transition: all 0.2s ease;
+} 
 @media (prefers-color-scheme: dark) { 
     body { 
         background-color: #16232f;
@@ -70,6 +77,24 @@ img {
     top: 0px;
     left: -3vw;
     height: 5vw;
+}
+img:hover{
+    animation: roll 0.5s ease;
+}
+
+@keyframes roll {
+    0% {
+    transform: rotate(0deg);
+
+    }
+    50% {
+    transform: rotate(60deg);
+
+    }
+    75% {
+    transform: rotate(-60deg);
+
+    }
 }
 
 .data {
