@@ -10,7 +10,33 @@
     font-family: 'digifacewide',"VonwaonBitmap"; 
     font-size: 3vw;
 }
-
+body {
+    background-color: #f8f9fa;
+}
+#now_date {
+    color: #0a3c69;
+}
+#now_time{
+    color: #096c7d;
+}
+#remain_time {
+    color: #422b09;
+}
+@media (prefers-color-scheme: dark) { 
+    body { 
+        background-color: #16232f;
+        color:#fff
+    }
+    #now_date {
+    color: #adf3ff;
+    }
+    #now_time {
+    color: #07aac7;
+    }
+    #remain_time {
+    color: #b56e02;
+    }
+}
 .main {
     position: relative;
     height: 5vw;
@@ -55,11 +81,12 @@ img {
     text-align: center;
     z-index: 1;
 }
-button{
+input[type="button"]{
     color: #fff !important;
     background-color: #1b2d3e !important;
     border: none !important;
-    top: -0.5vw !important;
+    top: -1vw !important;
     display: inline-block !important;
     position: relative !important;
+    font-size: 1vw;
 }

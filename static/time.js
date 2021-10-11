@@ -6,7 +6,8 @@ function copy() {
 document.getElementById('copy').addEventListener('click', copy);
 function add(s) {
         return s < 10 ? '0' + s : s;
-    }
+}
+
 var _width = 0;
 var timer;
 timer = setInterval(function () {
@@ -67,3 +68,4 @@ timer = setInterval(function () {
 
 
 }, 1000);
+
