@@ -79,7 +79,7 @@ img {
     height: 5vw;
 }
 img:hover{
-    animation: roll 0.5s ease;
+    animation: roll 0.5s ease 0s infinite;
 }
 
 @keyframes roll {
