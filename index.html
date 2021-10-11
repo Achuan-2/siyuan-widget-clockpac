@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <style>
+        /* .time:first-of-type span {
+            display: inline-block;
+            width: 26px;
+            height: 20px;
+            margin: 0px;
+            padding: 0px;
+        }
+        .time #year{
+            width:40px;
+        } */
+        @font-face {
+            font-family: 'digifacewide';
+            src: url('./src/digifacewide.ttf');
+        }
+        @font-face {
+            font-family: 'IPix';
+            src: url('./src/VonwaonBitmap.ttf');
+        }
+        * {
+            font-family: 'digifacewide',"IPix"; 
+            font-size: 3vw;
+        }
+
+        .main {
+            position: relative;
+            height: 4vw;
+            width: 61vw;
+            background: #787878;
+            /* margin: 100px auto; */
+            border-radius: 1vw;
+            left: 0vw;
+        }
+
+        .inner {
+            height: 2.7vw;
+            width: 0vw;
+            background: #053a05;
+            position: absolute;
+            top: 0.7vw;
+            border-radius: 0.7vw;
+            overflow: hidden;
+        }
+
+        .line {
+            position: relative;
+            /* left: 0.1vw; */
+            top: 1.6vw;
+            width: 59vw;
+            border-top: 0.7vw dotted #fff;
+        }
+
+        img {
+            position: absolute;
+            top: 0px;
+            left: -3vw;
+            height: 4vw;
+        }
+
+        .data {
+            position: absolute;
+            
+            left: 0vw;
+            top: 4vw;
+
+            text-align: center;
+            z-index: 1;
+        }
+        button{
+            color: #fff !important;
+            background-color: #1b2d3e !important;
+            border: none !important;
+            top: -0.5vw !important;
+            display: inline-block !important;
+            position: relative !important;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+            <div class="col">Date：<span id="now_date"></span>
+            </div>
+            </br>
+            <div class="col">Time：
+                <span id="now_time"></span>
+                <input type="button" onclick="copy" id="copy" value="Copy" />
+            
+            </div>
+            <div class="col">Remain：
+                <span id="remain_time"></span>
+            </div>
+
+            <div class="main">
+                <div class="line"></div>
+                <div class="inner">
+                </div>
+                <div class="pac">
+                    <img id="pac" src="./src/pacman1.svg">
+                    <div class="data"></div>
+                </div>
+            </div>
+    </div>
+    <script>
+        function copy() {
+                var val = document.getElementById("now_time");
+                window.getSelection().selectAllChildren(val);
+                document.execCommand("Copy"); // 执行浏览器复制命令
+        }
+        document.getElementById('copy').addEventListener('click', copy);
+        function add(s) {
+                return s < 10 ? '0' + s : s;
+            }
+        var _width = 0;
+        var timer;
+        timer = setInterval(function () {
+            var now = new Date();
+            var year = add(now.getFullYear()); //得到年份
+            var month = add(now.getMonth() + 1);//得到月份
+            var date = add(now.getDate());//得到日期
+            var day = '日一二三四五六'.charAt(new Date().getDay()); //获得周几
+            var hour = add(now.getHours());//得到小时数
+            var minute = add(now.getMinutes());//得到分钟数
+            var second = add(now.getSeconds());//得到秒数
+            document.getElementById("now_date").innerHTML = year + "." + month + "." + date + " " + "星期" + day;
+            document.getElementById("now_time").innerHTML = hour + ":" + minute + ":" + second;
+            var end = new Date(new Date(now.toLocaleDateString()).getTime() + 24 * 60 * 60 * 1000); // 当天24:00
+            var remain = (end - now) / 1000; // times是剩余时间总的秒数 
+            var h = add(parseInt(remain / 60 / 60 % 24)); //时
+            var m = add(parseInt(remain / 60 % 60)); // 分
+            var s = add(parseInt(remain % 60) + 1); // 当前的秒
+            document.getElementById("remain_time").innerHTML = h + ':' + m + ':' + s;
+            _width = (86400-remain)/86400*60;
+            // _width +=1; 
+            // 6:00
+            if (_width > 15) {
+                document.getElementsByClassName("inner")[0].style.background = "#71f971";
+                document.getElementById("pac").setAttribute('src', './src/pacman2.svg')
+            }
+            // 12:00
+            if (_width > 30) {
+                document.getElementsByClassName("inner")[0].style.background = "#ffce54";
+                document.getElementById("pac").setAttribute('src', './src/pacman3.svg')
+            }
+            // 18:00
+            if (_width > 45) {
+                document.getElementsByClassName("inner")[0].style.background = "#fde9eb";
+                document.getElementById("pac").setAttribute('src', './src/pacman4.svg')
+            }
+            // 20:00
+            if (_width > 50) {
+                document.getElementsByClassName("inner")[0].style.background = "#ee5e6c";
+                document.getElementById("pac").setAttribute('src', './src/pacman5.svg')
+            }
+            // 22:00
+            if (_width > 55) {
+                document.getElementsByClassName("inner")[0].style.background = "#db172a";
+                document.getElementById("pac").setAttribute('src', './src/pacman6.svg');
+            }
+            // 24:00
+            if (_width >= 60) {
+                _width=0;
+                // clearInterval(timer);
+            }
+            document.getElementsByClassName("inner")[0].style.width = _width + "vw";
+            document.getElementsByTagName("img")[0].style.left = -1 + _width + "vw";
+            var _data = Math.floor((_width / 60) * 100);
+            document.getElementsByClassName("data")[0].innerText = _data + "%";
+            document.getElementsByClassName("data")[0].style.left = 0 + _width + "vw";
+
+
+        }, 1000);
+    </script>
+
+
+</body>
+</html>
