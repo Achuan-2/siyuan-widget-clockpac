@@ -10,9 +10,9 @@
     font-family: 'digifacewide',"VonwaonBitmap"; 
     font-size: 3vw;
 }
-body {
+/* body {
     background-color: #f8f9fa;
-}
+} */
 #now_date {
     color: #0a3c69;
 }
@@ -31,7 +31,7 @@ body {
 } 
 @media (prefers-color-scheme: dark) { 
     body { 
-        background-color: #16232f;
+        /* background-color: #16232f; */
         color:#fff
     }
     #now_date {
