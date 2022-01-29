@@ -27,38 +27,38 @@ timer = setInterval(function () {
     var h = add(parseInt(remain / 60 / 60 % 24)); //时
     var m = add(parseInt(remain / 60 % 60)); // 分
     var s = add(parseInt(remain % 60) + 1); // 当前的秒
-    document.getElementById("remain_time").innerHTML = h + ':' + m + ':' + s;
+    // document.getElementById("remain_time").innerHTML = h + ':' + m + ':' + s;
     _width = (86400-remain)/86400*60;
     // _width +=1; 
     // 6:00
-    if (_width > 15) {
+    if (hour > 6) {
         document.getElementsByClassName("inner")[0].style.background = "#71f971";
-        document.getElementById("pac").setAttribute('src', './src/pacman2.svg')
+        document.getElementById("pac").setAttribute("src", "./src/pacman2.svg");
     }
     // 12:00
-    if (_width > 30) {
+    if (hour > 12) {
         document.getElementsByClassName("inner")[0].style.background = "#ffce54";
-        document.getElementById("pac").setAttribute('src', './src/pacman3.svg')
+        document.getElementById("pac").setAttribute("src", "./src/pacman3.svg");
     }
     // 18:00
-    if (_width > 45) {
+    if (hour > 18) {
         document.getElementsByClassName("inner")[0].style.background = "#fde9eb";
-        document.getElementById("pac").setAttribute('src', './src/pacman4.svg')
+        document.getElementById("pac").setAttribute("src", "./src/pacman4.svg");
     }
     // 20:00
-    if (_width > 50) {
+    if (hour > 20) {
         document.getElementsByClassName("inner")[0].style.background = "#ee5e6c";
-        document.getElementById("pac").setAttribute('src', './src/pacman5.svg')
+        document.getElementById("pac").setAttribute("src", "./src/pacman5.svg");
     }
     // 22:00
-    if (_width > 55) {
+    if (hour > 22) {
         document.getElementsByClassName("inner")[0].style.background = "#db172a";
-        document.getElementById("pac").setAttribute('src', './src/pacman6.svg');
+        document.getElementById("pac").setAttribute("src", "./src/pacman6.svg");
     }
     // 24:00
     if (_width >= 60) {
-        _width=0;
-        // clearInterval(timer);
+        _width = 0;
+      // clearInterval(timer);
     }
     document.getElementsByClassName("inner")[0].style.width = _width + "vw";
     document.getElementsByTagName("img")[0].style.left = -1 + _width + "vw";
