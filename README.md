@@ -33,3 +33,11 @@
 ```markdown
 <iframe src="http://127.0.0.1:6806/widgets/Clock-Pac" data-src="http://127.0.0.1:6806/widgets/Clock-Pac" data-subtype="widget" border="0" frameborder="no" framespacing="0" allowfullscreen="true"  style="display: flex;"></iframe>
 ```
+
+## 更新日志
+
+- v0.0.2/2022-01-30
+  - 取消剩余时间
+  - 调整进度条宽度
+  - 调整配色
+- v0.0.1/2021-10-11
