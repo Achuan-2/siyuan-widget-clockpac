@@ -3,6 +3,7 @@
 > The name is commbined with Clock and Pac-man.
 > It will display date today and time now,with a progressing bar.
 > Preview: https://achuan-2.github.io/siyuan-widget-clockpac/
+
 ![preview.png](https://cdn.jsdelivr.net/gh/Achuan-2/siyuan-widget-clockpac/preview.png)
 
 这是一个非常非常简单的小挂件，本 JS 小白目前希望通过写一些小挂件来入门 JavaScript。
@@ -23,7 +24,11 @@
 * 18-20 点：橙色
 * 20-22 点：粉色
 * 22-24 点：红色
- **我的主要使用场景** ：我的 dailynote 流程会简要记录一天做了什么事情，所以我会把本挂件插入到 dailynote 模板相应位置的上方。因为我习惯把任务栏隐藏，所以通过本挂件来显示当前时间，记录时点击 Copy 复制当前时间粘贴到下方大纲列表中。
+
+
+## 我的主要使用场景
+
+我的 dailynote 流程会简要记录一天什么时刻做了什么事情，所以我会把本挂件插入到 dailynote 模板相应位置的上方。通过本挂件来显示当前时间，记录时点击 Copy 复制当前时间粘贴到下方大纲列表中。
 
 ```markdown
 <iframe src="http://127.0.0.1:6806/widgets/Clock-Pac" data-src="http://127.0.0.1:6806/widgets/Clock-Pac" data-subtype="widget" border="0" frameborder="no" framespacing="0" allowfullscreen="true"  style="display: flex;"></iframe>
