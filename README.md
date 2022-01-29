@@ -3,7 +3,7 @@
 > The name is commbined with Clock and Pac-man.
 > It will display date today and time now,with a progressing bar.
 > Preview: https://achuan-2.github.io/siyuan-widget-clockpac/
-![preview.png(https://cdn.jsdelivr.net/gh/Achuan-2/siyuan-widget-clockpac/preview.png)
+![preview.png](https://cdn.jsdelivr.net/gh/Achuan-2/siyuan-widget-clockpac/preview.png)
 
 这是一个非常非常简单的小挂件，本 JS 小白目前希望通过写一些小挂件来入门 JavaScript。
 
