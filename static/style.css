@@ -18,15 +18,15 @@
     -webkit-text-stroke: 2px #333;
 }
 #now_date {
-    color: #d0d5f4;
-    -webkit-text-stroke: 2px #333;
+    color: #3c405a;
+    text-shadow: 0 0 2px #333;
 
 }
 
 #now_time{
     color: #096c7d;
     color: #ed5a35;
-    text-shadow: 0 0 5px #c23411;
+    text-shadow: 0 0 3px #c23411;
         /* color: #1de65a;
     text-shadow:0 0 5px #13aa41; */
 }
@@ -47,21 +47,7 @@
     transition: all 0.2s ease;
 }  */
 
-@media (prefers-color-scheme: dark) { 
-    body { 
-        /* background-color: #16232f; */
-        color:#fff
-    }
-    #now_date {
-    color: #adf3ff;
-    }
-    #now_time {
-    color: #07aac7;
-    }
-    #remain_time {
-    color: #d4bd9b63;
-    }
-}
+
 .main {
     position: relative;
     height: 5vw;
@@ -123,7 +109,10 @@ img:hover{
 
     text-align: center;
     z-index: 1;
-}
+    color: #000;
+    text-shadow: 0 0 5px #ffffff;
+
+}   
 input[type="button"]{
     color: #fff !important;
     background-color: #1b2d3e;
