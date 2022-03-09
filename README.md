@@ -4,8 +4,8 @@
 > It will display date today and time now,with a progressing bar.
 > Preview: https://achuan-2.github.io/siyuan-widget-clockpac/
 
-![preview.png](https://cdn.jsdelivr.net/gh/Achuan-2/siyuan-widget-clockpac/preview.png)
 
+![preview.png](https://cdn.jsdelivr.net/gh/Achuan-2/PicBed@pic/assets/README/20220309152529_2022-03-09.png)
 这是一个非常非常简单的小挂件，本 JS 小白目前希望通过写一些小挂件来入门 JavaScript。
 
 名字 Clock-Pac 是 Clock 时钟 +Pacman 吃豆人的组合，功能很简单，展示当前的时间，copy 按钮可以复制当前时间到剪贴板。
@@ -36,6 +36,8 @@
 
 ## 更新日志
 
+- v0.0.4/2021-02-02
+  - 调整样式
 - v0.0.3/2021-02-02
   - 修复晚上身体颜色和头不搭配的问题
   - 修复不准时变色的问题
